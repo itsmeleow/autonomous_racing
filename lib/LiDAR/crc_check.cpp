@@ -1,4 +1,4 @@
-#include <stdint.h>
+#include "crc_check.h"
 
 /* Cyclic Redundancy Check (CRC) for the LD19 sensor.
 Utilizes CRC-8 to check a single byte for corruption during transmission */
@@ -28,7 +28,7 @@ static const uint8_t CrcTable[256] = {
     0x7f, 0x32, 0xe5, 0xa8
 };
 
-uint8_t CalCRC8(uint8_t *p, uint8_t len){
+uint8_t calCRC8(const uint8_t *p, uint8_t len){
     uint8_t crc = 0;
     uint16_t i;
 
